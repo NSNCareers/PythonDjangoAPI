@@ -32,3 +32,6 @@ python manage.py makemigrations
 
 Migrate
 python manage.py migrate
+
+Create Super User
+python manage.py createsuperuser

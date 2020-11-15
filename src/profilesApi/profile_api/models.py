@@ -9,7 +9,7 @@ from django.contrib.auth.models import BaseUserManager
 class UserProfileManager(BaseUserManager):
     """Helps work with our custom user model"""
 
-    def create_User(self, email, firstName, lastName,password=None):
+    def create_user(self, email, firstName, lastName,password=None):
 
         if not email:
             raise ValueError('Users must provide a valid email address')
@@ -19,9 +19,9 @@ class UserProfileManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_SuperUser(self, email, firstName, lastName,password):
+    def create_superuser(self, email, firstName, lastName,password):
         """Creates a new super user"""
-        user = self.create_User(email, firstName, lastName,password)
+        user = self.create_user(email, firstName, lastName,password)
         user.is_superuser = True
         user.is_staff = True
         user.save(using=self._db)
@@ -34,6 +34,7 @@ class UserProfile(AbstractBaseUser,PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     firstName = models.CharField(max_length=255)
     lastName = models.CharField(max_length=255)
+    is_superuser = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
