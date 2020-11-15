@@ -17,4 +17,11 @@ return to virtual env:
 workon PythonDjangoAPI
 
 Create requiremets file 
-pip freeze > requirements.txt
+pip3 freeze > requirements.txt
+
+run django server
+python manage.py runserver 0.0.0.0:8080
+
+
+Install dependencies
+pip3 install -r requirements.txt
