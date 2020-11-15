@@ -25,3 +25,10 @@ python manage.py runserver 0.0.0.0:8080
 
 Install dependencies
 pip3 install -r requirements.txt
+
+
+Create a Migration
+python manage.py makemigrations
+
+Migrate
+python manage.py migrate
