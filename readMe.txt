@@ -37,4 +37,5 @@ Create Super User
 python manage.py createsuperuser
 snscareers@yahoo.com
 nsncareers1@gmail.com
+ajangng@outlook.com
 Password01
