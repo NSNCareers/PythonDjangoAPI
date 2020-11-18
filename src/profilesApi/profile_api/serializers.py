@@ -27,3 +27,11 @@ class UserProfileSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+class ProfilefeeditemSerializer(serializers.ModelSerializer):
+    """A serializer for profile feed iteems"""
+
+    class Meta:
+        model = models.ProfileFeedItem
+        fields = ('id','user_profile','status_text','create_on')
+        extra_kwargs = {'user_profile':{'read_only':True}}
