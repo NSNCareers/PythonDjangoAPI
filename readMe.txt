@@ -35,3 +35,6 @@ python manage.py migrate
 
 Create Super User
 python manage.py createsuperuser
+snscareers@yahoo.com
+nsncareers1@gmail.com
+Password01

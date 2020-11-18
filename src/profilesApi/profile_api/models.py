@@ -24,6 +24,7 @@ class UserProfileManager(BaseUserManager):
         user = self.create_user(email, firstName, lastName,password)
         user.is_superuser = True
         user.is_staff = True
+        user.is_active = True
         user.save(using=self._db)
         return user
 
@@ -48,7 +49,7 @@ class UserProfile(AbstractBaseUser,PermissionsMixin):
 
         return self.firstName+''+self.lastName
 
-    def get_FirstName(self):
+    def get_short_name(self):
         """Used in getting users first name"""
 
         return self.firstName
